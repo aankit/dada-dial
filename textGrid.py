@@ -4,7 +4,7 @@ from markov import MarkovGenerator
 class TextGrid(object):
  	
 	def __init__(self):
-		self.pp = pprint.PrettyPrinter(indent=4)
+		# pp = pprint.PrettyPrinter(indent=4)
 		self.generator = MarkovGenerator(n=1, max=3)
 
 		self.path = '../textGrids'
@@ -16,15 +16,17 @@ class TextGrid(object):
 				#print tgFile
 				tg = tgt.read_textgrid(self.path + '/' + tgFile)
 				file_annotations = [i for t in tg.tiers for i in t]
-				for a1, a2 in zip(file_annotations, file_annotations[1:]):
+				for i in range(len(file_annotations)):
+					a1 = file_annotations[i]
 					filename = tgFile[:-9]
-					self.annotations[a1] = filename
-					self.feedMarkov(a1,a2)
+					self.annotations[a1.text] = (filename, a1)
+					if i == len(file_annotations)-1:
+						continue
+					else:
+						a2 = file_annotations[i+1]
+						self.feedMarkov(a1,a2)
 
-		# pp.pprint(self.generator.ngrams)
-			#startTime = int(a.start_time*1000)
-			#endTime = int(a.end_time*1000)
-			#duration = int(a.duration()*1000)
+		# pp.pprint(self.annotations)
 		
 
 	def generateText(self):
