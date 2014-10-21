@@ -12,6 +12,12 @@ tg = TextGrid()
 # - wav files
 #	- path = ./finalAudio/filename.wav
 
-stuff = tg.generateText()
+structure = tg.generateText()
+
+for line in structure:
+	for interval in line:
+		segment = (interval.start_time, interval.end_time)
+		filename = tg.annotations[interval]
+		
 
 		

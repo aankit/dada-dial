@@ -8,64 +8,41 @@ class MarkovGenerator(object):
     self.beginnings = list() # beginning ngram of every line
 
   def tokenize(self, text):
-    # words = text.split(" ")
-    # first = words[0]
-    # last = words[-1]
-    # tips = {first: text, last: text}
-    # return tips
     return text.split(" ")
 
-  def feed(self, text):
-    print 'got new text'
-    tokens = self.tokenize(text)
+  def feed(self, first,second):
 
-    # discard this line if it's too short
-    if len(tokens) < self.n:
-      return
+    self.beginnings.append(first)
+    # if we've already seen this ngram, append; otherwise, set the
+    # value for this key as a new list
+    if first[0] in self.ngrams:
+      self.ngrams[first[0]].append(second)
+    else:
+      self.ngrams[first[0]] = [second]
 
-    # store the first ngram of this line
-    beginning = tuple(tokens[:self.n])
-    #print beginning
-    self.beginnings.append(beginning)
-    #print self.beginnings
-    for i in range(len(tokens) - self.n):
-
-      gram = tuple(tokens[i:i+self.n])
-      next = tokens[i+self.n] # get the element after the gram
-
-      # if we've already seen this ngram, append; otherwise, set the
-      # value for this key as a new list
-      if gram in self.ngrams:
-        self.ngrams[gram].append(next)
-      else:
-        self.ngrams[gram] = [next]
-
-  # called from generate() to join together generated elements
-  def concatenate(self, source):
-    return " ".join(source)
 
   # generate a text from the information in self.ngrams
   def generate(self):
 
     from random import choice
 
-    # get a random line beginning; convert to a list. 
+    # get a random interval and add to output list,
     current = choice(self.beginnings)
-    output = list(current)
-
+    output = [current[1]]
+    current_letter = current[0]
     for i in range(self.max):
-      if current in self.ngrams:
-        possible_next = self.ngrams[current]
+      if current_letter in self.ngrams:
+        possible_next = self.ngrams[current[0]]
         next = choice(possible_next)
-        output.append(next)
+        output.append(next[1])
+        # print output
         # get the last N entries of the output; we'll use this to look up
         # an ngram in the next iteration of the loop
-        current = tuple(output[-self.n:])
+        current_letter = next[1].text[-1]
       else:
         break
 
-    output_str = self.concatenate(output)
-    return output_str
+    return output
     
 
 if __name__ == '__main__':
