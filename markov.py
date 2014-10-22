@@ -35,9 +35,7 @@ class MarkovGenerator(object):
         possible_next = self.ngrams[current[0]]
         next = choice(possible_next)
         output.append(next[1])
-        # print output
-        # get the last N entries of the output; we'll use this to look up
-        # an ngram in the next iteration of the loop
+        #get the last letter of the next entry
         current_letter = next[1].text[-1]
       else:
         break

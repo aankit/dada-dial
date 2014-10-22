@@ -1,11 +1,13 @@
+#!/usr/bin/env python
+
 from pydub import AudioSegment
-from pydub.utils import db_to_float
-import time
+# from pydub.utils import db_to_float
+# import time
 	
 class AudioSegmenter(object):
 	
-	def __init__(self):
-		self.path = '../final_audio/'
+	def __init__(self, path):
+		self.path = path + '/final_audio/'
 		self.poem = AudioSegment.from_wav(self.path + 'seedPoem.wav')
 
 	def cut(self, filename, start, end):
@@ -19,8 +21,9 @@ class AudioSegmenter(object):
 	def concatenate(self, first, second):
 		return first + second
 
-	def exportFile(self, filename):
-		self.poem.export(self.path + filename, format="wav")
+	def exportFile(self, sounds_path, filename):
+		self.poem = self.poem.set_frame_rate(8000)
+		self.poem.export(sounds_path + filename, format="wav")
 
 	def cutbySilence(self, filename):
 		# Let's load up the audio we need...

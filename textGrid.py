@@ -1,20 +1,22 @@
+#!/usr/bin/env python
+
 import tgt, os, pprint
 from markov import MarkovGenerator
 
 class TextGrid(object):
  	
-	def __init__(self):
+	def __init__(self, path):
 		# pp = pprint.PrettyPrinter(indent=4)
 		self.generator = MarkovGenerator(n=1, max=3)
 
-		self.path = '../textGrids'
+		self.path = path + '/textGrids/'
 		#let's get the text from the textGrids, save the annotations in a dict, key=filename
 		self.annotations = dict()
 
 		for tgFile in os.listdir(self.path):
 			if tgFile[-9:] == '.TextGrid':
 				#print tgFile
-				tg = tgt.read_textgrid(self.path + '/' + tgFile)
+				tg = tgt.read_textgrid(self.path + tgFile)
 				file_annotations = [i for t in tg.tiers for i in t]
 				for i in range(len(file_annotations)):
 					a1 = file_annotations[i]
