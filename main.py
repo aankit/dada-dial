@@ -11,20 +11,17 @@ import pickle
 
 path = '/home/abp225'
 
-callerId = sys.argv[1]
-
 f = open(path + '/asterisk_agi/poemInfo.p', 'rb')
 poemInfo = pickle.load(f)
-f.close()
 
-# print poemInfo
+print poemInfo
 
 tg = TextGrid(path)
 segmenter = AudioSegmenter(path)
 
 sounds_path = '/home/abp225/asterisk_sounds/'
 
-structure = tg.generateText()
+structure = tg.generateText(2)
 
 #create new wav file for our poem
 attribution = ''
@@ -39,4 +36,5 @@ for line in structure:
 
 filename = 'poem.wav'
 segmenter.exportFile(sounds_path, filename)
-os.system('/home/abp225/ruby/attributePoets.rb callerId attribution')
+
+# os.system('/home/abp225/ruby/attributePoets.rb callerId attribution')

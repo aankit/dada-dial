@@ -31,9 +31,9 @@ class TextGrid(object):
 		# pp.pprint(self.annotations)
 		
 
-	def generateText(self):
+	def generateText(self, numLines):
 		output = list()
-		for i in range(4):
+		for i in range(numLines):
 			 output.append(self.generator.generate())
 		return output
 

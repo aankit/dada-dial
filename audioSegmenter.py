@@ -9,6 +9,7 @@ class AudioSegmenter(object):
 	def __init__(self, path):
 		self.path = path + '/final_audio/'
 		self.poem = AudioSegment.from_wav(self.path + 'seedPoem.wav')
+		print 'initialized'
 
 	def cut(self, filename, start, end):
 		audio = AudioSegment.from_wav(self.path + filename + '.wav')
