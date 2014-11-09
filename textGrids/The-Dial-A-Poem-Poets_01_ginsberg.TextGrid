@@ -1,0 +1,78 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 115.80081632653061 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0 
+        xmax = 115.80081632653061 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 4.076080052378021 
+            text = " " 
+        intervals [2]:
+            xmin = 4.076080052378021 
+            xmax = 20.074194052749355 
+            text = "oooooooooooooooooooooooooooooooooooooooohhhmm" 
+        intervals [3]:
+            xmin = 20.074194052749355 
+            xmax = 20.262127067034374 
+            text = "" 
+        intervals [4]:
+            xmin = 20.262127067034374 
+            xmax = 35.95002813417718 
+            text = "   aaaaaaaaahhhhhhhhhhhhhhhhhhhhuuuuuuuuwawawhhuh" 
+        intervals [5]:
+            xmin = 35.95002813417718 
+            xmax = 36.11443432411577 
+            text = " " 
+        intervals [6]:
+            xmin = 36.11443432411577 
+            xmax = 49.276316533728846 
+            text = "oooooooooooooooooooooooooommmmmmmmmm" 
+        intervals [7]:
+            xmin = 49.276316533728846 
+            xmax = 50.0575887019635 
+            text = "" 
+        intervals [8]:
+            xmin = 50.0575887019635 
+            xmax = 62.42178022162073 
+            text = "waaaaa dwwwwwwwwwaaaaaaa" 
+        intervals [9]:
+            xmin = 62.42178022162073 
+            xmax = 63.71406498420032 
+            text = "" 
+        intervals [10]:
+            xmin = 63.71406498420032 
+            xmax = 74.8374063431378 
+            text = "" 
+        intervals [11]:
+            xmin = 74.8374063431378 
+            xmax = 76.69321363964904 
+            text = "" 
+        intervals [12]:
+            xmin = 76.69321363964904 
+            xmax = 89.76646321689398 
+            text = "" 
+        intervals [13]:
+            xmin = 89.76646321689398 
+            xmax = 101.0888746590092 
+            text = "siiiiibbiiiiii" 
+        intervals [14]:
+            xmin = 101.0888746590092 
+            xmax = 101.266139036108 
+            text = "" 
+        intervals [15]:
+            xmin = 101.266139036108 
+            xmax = 115.27002482691296 
+            text = "oooooooooooooooooooohhhhmm" 
+        intervals [16]:
+            xmin = 115.27002482691296 
+            xmax = 115.80081632653061 
+            text = "" 

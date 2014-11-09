@@ -1,0 +1,422 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 234.76244897959185 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0 
+        xmax = 234.76244897959185 
+        intervals: size = 102 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.727326473376135 
+            text = " " 
+        intervals [2]:
+            xmin = 1.727326473376135 
+            xmax = 6.203253105058974 
+            text = "pressure! when i see you climb the walls, I climb them too" 
+        intervals [3]:
+            xmin = 6.203253105058974 
+            xmax = 6.247569210323161 
+            text = "" 
+        intervals [4]:
+            xmin = 6.247569210323161 
+            xmax = 12.23024342098834 
+            text = "Mudhole, no way out of the telephone booth, the classroom, the VW bus, the igloo" 
+        intervals [5]:
+            xmin = 12.23024342098834 
+            xmax = 12.318875631516713 
+            text = "" 
+        intervals [6]:
+            xmin = 12.318875631516713 
+            xmax = 16.218692894765127 
+            text = "no way out of the closet hut, the two for twos, the greenhouse" 
+        intervals [7]:
+            xmin = 16.218692894765127 
+            xmax = 16.3073251052935 
+            text = "" 
+        intervals [8]:
+            xmin = 16.3073251052935 
+            xmax = 21.492309421203323 
+            text = "the waterproof test, the motel room, the split level ranch house, the hacienda" 
+        intervals [9]:
+            xmin = 21.492309421203323 
+            xmax = 28.38291811565018 
+            text = "the chalet, the icy caslte, the formidable mountain, the haunted house, the 747" 
+        intervals [10]:
+            xmin = 28.38291811565018 
+            xmax = 35.83495405973659 
+            text = "the rickety porch, the lazy afternoon, my mother's house, your sister's house, the hospital ward, the clothes' hamper" 
+        intervals [11]:
+            xmin = 35.83495405973659 
+            xmax = 36.049604241325376 
+            text = "no one way out of chicago, or cleveland, or detroit" 
+        intervals [12]:
+            xmin = 36.049604241325376 
+            xmax = 39.37331209927705 
+            text = "no way out of chicago, or cleveland or detroit" 
+        intervals [13]:
+            xmin = 39.37331209927705 
+            xmax = 39.461944308822424 
+            text = "" 
+        intervals [14]:
+            xmin = 39.461944308822424 
+            xmax = 43.40607763359174 
+            text = "no way out of the 60 story office building, the church, the temple" 
+        intervals [15]:
+            xmin = 43.40607763359174 
+            xmax = 43.49470984313712 
+            text = "" 
+        intervals [16]:
+            xmin = 43.49470984313712 
+            xmax = 50.54097050199467 
+            text = "the long island railroad station, the a train, the d train, the bmt, the 9th street cross town bus" 
+        intervals [17]:
+            xmin = 50.54097050199467 
+            xmax = 50.56887255709629 
+            text = "the rain, the seven inch snow piling up outside my window" 
+        intervals [18]:
+            xmin = 50.56887255709629 
+            xmax = 56.00313477727119 
+            text = "the rain, the seven in inch snow piling up outside my window, the refreshingly hot shower" 
+        intervals [19]:
+            xmin = 56.00313477727119 
+            xmax = 56.04676586051684 
+            text = "" 
+        intervals [20]:
+            xmin = 56.04676586051684 
+            xmax = 59.4037104555447 
+            text = "no way out of pool room, the bowling alley, the noisy bar" 
+        intervals [21]:
+            xmin = 59.4037104555447 
+            xmax = 59.41478948061079 
+            text = "" 
+        intervals [22]:
+            xmin = 59.41478948061079 
+            xmax = 61.08279836530467 
+            text = "the enormous bathtub" 
+        intervals [23]:
+            xmin = 61.08279836530467 
+            xmax = 61.116035438942404 
+            text = "" 
+        intervals [24]:
+            xmin = 61.116035438942404 
+            xmax = 65.73099500078597 
+            text = "the chinese restaurant, the delicatessen, the department store, the trolley" 
+        intervals [25]:
+            xmin = 65.73099500078597 
+            xmax = 65.75315304814383 
+            text = "" 
+        intervals [26]:
+            xmin = 65.75315304814383 
+            xmax = 71.89626475174464 
+            text = "no way out of the desert, off the out, out of the tunnell, out of the river, the lake the ocean, the bay" 
+        intervals [27]:
+            xmin = 71.89626475174464 
+            xmax = 72.01922875691783 
+            text = "" 
+        intervals [28]:
+            xmin = 72.01922875691783 
+            xmax = 78.12048763079078 
+            text = "off the skis, out of the arena, out of the spotlight, the movie theater, the motion picture screen" 
+        intervals [29]:
+            xmin = 78.12048763079078 
+            xmax = 78.13156665377613 
+            text = "" 
+        intervals [30]:
+            xmin = 78.13156665377613 
+            xmax = 82.86942263155241 
+            text = "now way out of the barn, the farm, the chicken coop, the stable, the hayloft" 
+        intervals [31]:
+            xmin = 82.86942263155241 
+            xmax = 83.01344993036192 
+            text = "" 
+        intervals [32]:
+            xmin = 83.01344993036192 
+            xmax = 88.65383597658027 
+            text = "no way out of the doctorate, the BA, the MA, the toolshed, the library, my sneakers" 
+        intervals [33]:
+            xmin = 88.65383597658027 
+            xmax = 88.67599402255095 
+            text = "" 
+        intervals [34]:
+            xmin = 88.67599402255095 
+            xmax = 95.91511017714879 
+            text = "no way out of africa, way off the cheap, the circus, the rodeo, the Donizetti opera, la fille du regiment " 
+        intervals [35]:
+            xmin = 95.91511017714879 
+            xmax = 95.98158431506087 
+            text = "" 
+        intervals [36]:
+            xmin = 95.98158431506087 
+            xmax = 103.14164327799118 
+            text = "No escape from Joan Sutherland's astounding voice! or the barking dogs chasing the deer weakened from a long winter" 
+        intervals [37]:
+            xmin = 103.14164327799118 
+            xmax = 103.34106569172742 
+            text = "" 
+        intervals [38]:
+            xmin = 103.34106569172742 
+            xmax = 107.69512172496881 
+            text = "no escape from the guitar or the cello or the harsischord, harpsichord" 
+        intervals [39]:
+            xmin = 107.69512172496881 
+            xmax = 107.72179156848121 
+            text = "" 
+        intervals [40]:
+            xmin = 107.72179156848121 
+            xmax = 110.88888787675792 
+            text = "No escape from the mailman, the endless mail" 
+        intervals [41]:
+            xmin = 110.88888787675792 
+            xmax = 111.05329410911128 
+            text = "" 
+        intervals [42]:
+            xmin = 111.05329410911128 
+            xmax = 118.49094359075683 
+            text = "no way out of the stationery store,  the print shop, the newspaper office, the glossy IBM retail showroom on Williams Street" 
+        intervals [43]:
+            xmin = 118.49094359075683 
+            xmax = 118.56849675165425 
+            text = "" 
+        intervals [44]:
+            xmin = 118.56849675165425 
+            xmax = 123.40681395620288 
+            text = "the poker game, the family dinner, the cocktail party, the birthday celebration" 
+        intervals [45]:
+            xmin = 123.40681395620288 
+            xmax = 128.76249577641437 
+            text = "no way out of christmas, off new years, out of philadelphia, texas, reason, PA" 
+        intervals [46]:
+            xmin = 128.76249577641437 
+            xmax = 128.78465382169148 
+            text = "" 
+        intervals [47]:
+            xmin = 128.78465382169148 
+            xmax = 131.87337588080578 
+            text = "no way out of the sleeping bag, no way, no way" 
+        intervals [48]:
+            xmin = 131.87337588080578 
+            xmax = 132.01740317285285 
+            text = "" 
+        intervals [49]:
+            xmin = 132.01740317285285 
+            xmax = 141.8790337989844 
+            text = "no way out of the celery patch, the organic vegetable garden, the ancient forest, the deep ravine, the glistening valley, the starry night, the louvre, the met" 
+        intervals [50]:
+            xmin = 141.8790337989844 
+            xmax = 147.87470052589356 
+            text = "the numerous art galleries of new york city and LA, the simple chat, the zoo, no escape" 
+        intervals [51]:
+            xmin = 147.87470052589356 
+            xmax = 147.97441172807999 
+            text = "" 
+        intervals [52]:
+            xmin = 147.97441172807999 
+            xmax = 149.78569602940172 
+            text = "the coat hangers, no escape" 
+        intervals [53]:
+            xmin = 149.78569602940172 
+            xmax = 151.78378684807257 
+            text = "the history of russia, no escape" 
+        intervals [54]:
+            xmin = 151.78378684807257 
+            xmax = 151.89071029778196 
+            text = "" 
+        intervals [55]:
+            xmin = 151.89071029778196 
+            xmax = 155.41062532320106 
+            text = "China, Japan, the history of music, no escape" 
+        intervals [56]:
+            xmin = 155.41062532320106 
+            xmax = 155.48817848045718 
+            text = "" 
+        intervals [57]:
+            xmin = 155.48817848045718 
+            xmax = 159.38799438819322 
+            text = "the voices of the pygmys signing in the rainforest" 
+        intervals [58]:
+            xmin = 159.38799438819322 
+            xmax = 160.733959628597 
+            text = "mozart's legacy" 
+        intervals [59]:
+            xmin = 160.733959628597 
+            xmax = 161.81970383018262 
+            text = "" 
+        intervals [60]:
+            xmin = 161.81970383018262 
+            xmax = 165.5594205881363 
+            text = "no way out of prison, no way off progress, off collapse" 
+        intervals [61]:
+            xmin = 165.5594205881363 
+            xmax = 165.62589472292726 
+            text = "" 
+        intervals [62]:
+            xmin = 165.62589472292726 
+            xmax = 169.85315548901798 
+            text = "no way out of the white house, or the senate, or the capitol, no way, no way" 
+        intervals [63]:
+            xmin = 169.85315548901798 
+            xmax = 170.07473593832117 
+            text = "" 
+        intervals [64]:
+            xmin = 170.07473593832117 
+            xmax = 172.27706833790722 
+            text = "no way out of money when you're out of it" 
+        intervals [65]:
+            xmin = 172.27706833790722 
+            xmax = 172.36570051762848 
+            text = "" 
+        intervals [66]:
+            xmin = 172.36570051762848 
+            xmax = 175.84554002132464 
+            text = "no way out of whipperwhills, swallows, gulls, the swimming pool" 
+        intervals [67]:
+            xmin = 175.84554002132464 
+            xmax = 175.90093513365042 
+            text = "" 
+        intervals [68]:
+            xmin = 175.90093513365042 
+            xmax = 179.39082721017556 
+            text = "Bellows Falls, the great chain of being, no escape" 
+        intervals [69]:
+            xmin = 179.39082721017556 
+            xmax = 179.42741354951332 
+            text = "" 
+        intervals [70]:
+            xmin = 179.42741354951332 
+            xmax = 181.58782293021935 
+            text = " the magnetic field, no escape" 
+        intervals [71]:
+            xmin = 181.58782293021935 
+            xmax = 181.64321804254513 
+            text = "" 
+        intervals [72]:
+            xmin = 181.64321804254513 
+            xmax = 183.8257854681815 
+            text = "the continental shelf, no escape" 
+        intervals [73]:
+            xmin = 183.8257854681815 
+            xmax = 183.99737444465964 
+            text = "" 
+        intervals [74]:
+            xmin = 183.99737444465964 
+            xmax = 187.12165877983455 
+            text = "the great barrier reef, no escape, no escape" 
+        intervals [75]:
+            xmin = 187.12165877983455 
+            xmax = 187.17705389216033 
+            text = "" 
+        intervals [76]:
+            xmin = 187.17705389216033 
+            xmax = 188.9873797025657 
+            text = "the piper cub no return" 
+        intervals [77]:
+            xmin = 188.9873797025657 
+            xmax = 189.19788112940373 
+            text = "" 
+        intervals [78]:
+            xmin = 189.19788112940373 
+            xmax = 191.57987095941294 
+            text = "the next acceptance speech, no return" 
+        intervals [79]:
+            xmin = 191.57987095941294 
+            xmax = 191.74605629639035 
+            text = "" 
+        intervals [80]:
+            xmin = 191.74605629639035 
+            xmax = 193.98244598922412 
+            text = "the last hurrah, the middle age" 
+        intervals [81]:
+            xmin = 193.98244598922412 
+            xmax = 194.0156830566196 
+            text = "" 
+        intervals [82]:
+            xmin = 194.0156830566196 
+            xmax = 196.8408337852352 
+            text = "no way out of tv, no way off mars" 
+        intervals [83]:
+            xmin = 196.8408337852352 
+            xmax = 196.90074294391496 
+            text = "" 
+        intervals [84]:
+            xmin = 196.90074294391496 
+            xmax = 200.64545253713877 
+            text = "the moon, the sun's radiant energy, " 
+        intervals [85]:
+            xmin = 200.64545253713877 
+            xmax = 200.69250360444113 
+            text = "" 
+        intervals [86]:
+            xmin = 200.69250360444113 
+            xmax = 205.78885393841435 
+            text = " no way out of structural anthropology, or brain chemistry, or pain killers, or pain" 
+        intervals [87]:
+            xmin = 205.78885393841435 
+            xmax = 205.8931482021056 
+            text = "" 
+        intervals [88]:
+            xmin = 205.8931482021056 
+            xmax = 208.84016817783794 
+            text = "no way off pleasure, the rainbow, no escape" 
+        intervals [89]:
+            xmin = 208.84016817783794 
+            xmax = 209.01743253728048 
+            text = "" 
+        intervals [90]:
+            xmin = 209.01743253728048 
+            xmax = 210.56849568240278 
+            text = "the cab ride, no escape" 
+        intervals [91]:
+            xmin = 210.56849568240278 
+            xmax = 210.6682068845892 
+            text = "" 
+        intervals [92]:
+            xmin = 210.6682068845892 
+            xmax = 212.62919386092238 
+            text = "the world trade center, no escape" 
+        intervals [93]:
+            xmin = 212.62919386092238 
+            xmax = 212.76330449758007 
+            text = "" 
+        intervals [94]:
+            xmin = 212.76330449758007 
+            xmax = 219.35532286434977 
+            text = "the amazon, no escape, amazing grace, no escape, autumn, no escape, my window, no escape" 
+        intervals [95]:
+            xmin = 219.35532286434977 
+            xmax = 219.4127013912722 
+            text = "" 
+        intervals [96]:
+            xmin = 219.4127013912722 
+            xmax = 222.3154052771439 
+            text = "and midnight, stubborn midnight, no escape" 
+        intervals [97]:
+            xmin = 222.3154052771439 
+            xmax = 222.35972136700454 
+            text = "" 
+        intervals [98]:
+            xmin = 222.35972136700454 
+            xmax = 225.9264915654898 
+            text = "no return, no way off, no way out of midnight" 
+        intervals [99]:
+            xmin = 225.9264915654898 
+            xmax = 228.24403628117912 
+            text = "black midnight, deep midnight" 
+        intervals [100]:
+            xmin = 228.24403628117912 
+            xmax = 230.02012207890175 
+            text = "no coaxing midnight" 
+        intervals [101]:
+            xmin = 230.02012207890175 
+            xmax = 232.14503689056903 
+            text = "gentle midnight, no escape" 
+        intervals [102]:
+            xmin = 232.14503689056903 
+            xmax = 234.76244897959185 
+            text = "" 

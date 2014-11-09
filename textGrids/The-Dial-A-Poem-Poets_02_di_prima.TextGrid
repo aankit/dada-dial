@@ -1,0 +1,90 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 409.02530612244897 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "word" 
+        xmin = 0 
+        xmax = 409.02530612244897 
+        intervals: size = 19 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.08763057860123366 
+            text = "" 
+        intervals [2]:
+            xmin = 0.08763057860123366 
+            xmax = 5.22829878924687 
+            text = "Revolutionary letter number 7" 
+        intervals [3]:
+            xmin = 5.22829878924687 
+            xmax = 12.274559526252528 
+            text = "There are those who can tell you how to make molotov cocktails, flamethrowers, bombs, whatever you might be needing" 
+        intervals [4]:
+            xmin = 12.274559526252528 
+            xmax = 17.89671201814059 
+            text = "find them and learn, define your aim clearly, choose your ammo with that in mind" 
+        intervals [5]:
+            xmin = 17.89671201814059 
+            xmax = 23.437482993197282 
+            text = "it is not a good idea to tote a gun or knife unless you are proficient in its use" 
+        intervals [6]:
+            xmin = 23.437482993197282 
+            xmax = 29.27732426303855 
+            text = "all swords are two edged can be used against you by anyone who can get them away from you" 
+        intervals [7]:
+            xmin = 29.27732426303855 
+            xmax = 34.85 
+            text = "it is even possible on the east coast to find an isolated place for target practice" 
+        intervals [8]:
+            xmin = 34.85 
+            xmax = 38.22993197278912 
+            text = "success will depend mostly on your state of mind" 
+        intervals [9]:
+            xmin = 38.22993197278912 
+            xmax = 43.38990929705216 
+            text = "meditate, pray, make love, be prepared at any time to die" 
+        intervals [10]:
+            xmin = 43.38990929705216 
+            xmax = 51.43796158445535 
+            text = " but don't get uptight, the guns will not win this one, they are an incidental part of the action, which we better damn well be good at " 
+        intervals [11]:
+            xmin = 51.43796158445535 
+            xmax = 57.42063533352051 
+            text = "what will win is mantras, the sustenance we give each other, the energy we plug into" 
+        intervals [12]:
+            xmin = 57.42063533352051 
+            xmax = 57.48272982422761 
+            text = "the" 
+        intervals [13]:
+            xmin = 57.48272982422761 
+            xmax = 58.85652887840193 
+            text = "the fact that we touch" 
+        intervals [14]:
+            xmin = 58.85652887840193 
+            xmax = 58.90084497692368 
+            text = "share food" 
+        intervals [15]:
+            xmin = 58.90084497692368 
+            xmax = 59.920115242923984 
+            text = "share food" 
+        intervals [16]:
+            xmin = 59.920115242923984 
+            xmax = 62.889293843881376 
+            text = "the buddha nature of everyone, friend and foe" 
+        intervals [17]:
+            xmin = 62.889293843881376 
+            xmax = 63.02224213944663 
+            text = "   " 
+        intervals [18]:
+            xmin = 63.02224213944663 
+            xmax = 67.71974858275237 
+            text = "like a million earthworms tunneling under the structure until it falls" 
+        intervals [19]:
+            xmin = 67.71974858275237 
+            xmax = 409.02530612244897 
+            text = "" 

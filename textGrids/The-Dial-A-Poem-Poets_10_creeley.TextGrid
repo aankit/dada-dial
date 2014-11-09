@@ -1,0 +1,90 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 79.49061224489796 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "line" 
+        xmin = 0 
+        xmax = 79.49061224489796 
+        intervals: size = 19 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.8570521541950114 
+            text = "" 
+        intervals [2]:
+            xmin = 3.8570521541950114 
+            xmax = 5.249274376417233 
+            text = "The Messengers" 
+        intervals [3]:
+            xmin = 5.249274376417233 
+            xmax = 12.052978999931595 
+            text = "" 
+        intervals [4]:
+            xmin = 12.052978999931595 
+            xmax = 19.96371882086168 
+            text = "their feelings under some distance of remote skin must touch, wondering if what impatience does block them" 
+        intervals [5]:
+            xmin = 19.96371882086168 
+            xmax = 23.005597620199577 
+            text = " so little love to share among so many" 
+        intervals [6]:
+            xmin = 23.005597620199577 
+            xmax = 32.91961163547554 
+            text = "so much yellow, orange hair on the one and on the other, such a darkness, of long hanging hair, now, such slightness of body" 
+        intervals [7]:
+            xmin = 32.91961163547554 
+            xmax = 34.680052160435416 
+            text = "and a voice that rises on" 
+        intervals [8]:
+            xmin = 34.680052160435416 
+            xmax = 36.13413266743457 
+            text = "the sounds of feeling" 
+        intervals [9]:
+            xmin = 36.13413266743457 
+            xmax = 42.066748044709996 
+            text = "aye, it raises the world, lifts, falls, like a sudden sunlight" 
+        intervals [10]:
+            xmin = 42.066748044709996 
+            xmax = 51.840544217687075 
+            text = "like that edge of the black night sweeps the low-lying fields of soft grasses, bodies, fills them with quiet longing" 
+        intervals [11]:
+            xmin = 51.840544217687075 
+            xmax = 53.633251497376534 
+            text = "" 
+        intervals [12]:
+            xmin = 53.633251497376534 
+            xmax = 55.44346354450962 
+            text = "" 
+        intervals [13]:
+            xmin = 55.44346354450962 
+            xmax = 60.153587888488396 
+            text = "as I said to my friend because I am always talking" 
+        intervals [14]:
+            xmin = 60.153587888488396 
+            xmax = 61.41031766807038 
+            text = "" 
+        intervals [15]:
+            xmin = 61.41031766807038 
+            xmax = 63.12202697902952 
+            text = "which was not his name" 
+        intervals [16]:
+            xmin = 63.12202697902952 
+            xmax = 64.91778658107886 
+            text = "the darkness surrounds us" 
+        intervals [17]:
+            xmin = 64.91778658107886 
+            xmax = 67.06380034016448 
+            text = "what can we do against it?" 
+        intervals [18]:
+            xmin = 67.06380034016448 
+            xmax = 70.89652695155581 
+            text = "or else shall we and why not buy a gun" 
+        intervals [19]:
+            xmin = 70.89652695155581 
+            xmax = 79.49061224489796 
+            text = "gun damn big car drive he said for christ sake look out where you're going" 

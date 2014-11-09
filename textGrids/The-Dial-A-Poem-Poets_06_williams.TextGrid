@@ -1,0 +1,226 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 100.64979591836735 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "line" 
+        xmin = 0 
+        xmax = 100.64979591836735 
+        intervals: size = 53 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.8410043680924046 
+            text = "duet" 
+        intervals [2]:
+            xmin = 0.8410043680924046 
+            xmax = 3.6777324263038547 
+            text = "art of dart" 
+        intervals [3]:
+            xmin = 3.6777324263038547 
+            xmax = 5.817959183673469 
+            text = "arrow of my marrow" 
+        intervals [4]:
+            xmin = 5.817959183673469 
+            xmax = 8.118095238095238 
+            text = "butter of my abutter" 
+        intervals [5]:
+            xmin = 8.118095238095238 
+            xmax = 10.238390022675738 
+            text = "bode of my abode" 
+        intervals [6]:
+            xmin = 10.238390022675738 
+            xmax = 11.958117913832199 
+            text = "cope of my scope" 
+        intervals [7]:
+            xmin = 11.958117913832199 
+            xmax = 13.781360544217687 
+            text = "curry of my scurry" 
+        intervals [8]:
+            xmin = 13.781360544217687 
+            xmax = 15.198526077097506 
+            text = "den of my eden" 
+        intervals [9]:
+            xmin = 15.198526077097506 
+            xmax = 16.877823129251702 
+            text = "do of my ado" 
+        intervals [10]:
+            xmin = 16.877823129251702 
+            xmax = 18.75777777777778 
+            text = "ember of my member" 
+        intervals [11]:
+            xmin = 18.75777777777778 
+            xmax = 20.318458049886623 
+            text = "eel of my feel" 
+        intervals [12]:
+            xmin = 20.318458049886623 
+            xmax = 21.938276643990932 
+            text = "fort of my effort" 
+        intervals [13]:
+            xmin = 21.938276643990932 
+            xmax = 24.47793650793651 
+            text = "flexibility of my inflexbility" 
+        intervals [14]:
+            xmin = 24.47793650793651 
+            xmax = 26.455713210792215 
+            text = "go of my ego" 
+        intervals [15]:
+            xmin = 26.455713210792215 
+            xmax = 28.24104308390023 
+            text = "gain of my again" 
+        intervals [16]:
+            xmin = 28.24104308390023 
+            xmax = 29.87009070294785 
+            text = "hence of my whence" 
+        intervals [17]:
+            xmin = 29.87009070294785 
+            xmax = 31.25024943310658 
+            text = "hymn of my whim" 
+        intervals [18]:
+            xmin = 31.25024943310658 
+            xmax = 32.829365079365076 
+            text = "inky of my dinky" 
+        intervals [19]:
+            xmin = 32.829365079365076 
+            xmax = 34.20956916099773 
+            text = "inter of my hinter" 
+        intervals [20]:
+            xmin = 34.20956916099773 
+            xmax = 36.169931972789115 
+            text = "jog of my ajog" 
+        intervals [21]:
+            xmin = 36.169931972789115 
+            xmax = 38.570249433106575 
+            text = "johnny o of my o johnny o" 
+        intervals [22]:
+            xmin = 38.570249433106575 
+            xmax = 40.11004535147392 
+            text = "kipper of my skipper" 
+        intervals [23]:
+            xmin = 40.11004535147392 
+            xmax = 41.60922902494331 
+            text = "kin of my skin" 
+        intervals [24]:
+            xmin = 41.60922902494331 
+            xmax = 43.15020408163265 
+            text = "liquor of my flicker" 
+        intervals [25]:
+            xmin = 43.15020408163265 
+            xmax = 45.00943310657596 
+            text = "napstick of my slapstick" 
+        intervals [26]:
+            xmin = 45.00943310657596 
+            xmax = 46.68993197278911 
+            text = "mission of my emission" 
+        intervals [27]:
+            xmin = 46.68993197278911 
+            xmax = 48.50977324263039 
+            text = "motion of my emotion" 
+        intervals [28]:
+            xmin = 48.50977324263039 
+            xmax = 49.78103300181367 
+            text = "nip of my snip" 
+        intervals [29]:
+            xmin = 49.78103300181367 
+            xmax = 51.62403628117914 
+            text = "now and my enow" 
+        intervals [30]:
+            xmin = 51.62403628117914 
+            xmax = 53.503696145124714 
+            text = "oiler of my toiler" 
+        intervals [31]:
+            xmin = 53.503696145124714 
+            xmax = 55.14371882086168 
+            text = "orpheus of my morpheus" 
+        intervals [32]:
+            xmin = 55.14371882086168 
+            xmax = 56.903129251700676 
+            text = "port of my sport" 
+        intervals [33]:
+            xmin = 56.903129251700676 
+            xmax = 58.32337868480725 
+            text = "patter of my spatter" 
+        intervals [34]:
+            xmin = 58.32337868480725 
+            xmax = 59.98358276643991 
+            text = "quash of my squash" 
+        intervals [35]:
+            xmin = 59.98358276643991 
+            xmax = 62.30324263038548 
+            text = "quiessence of my aquiscence" 
+        intervals [36]:
+            xmin = 62.30324263038548 
+            xmax = 64.32333333333334 
+            text = "raving my craving" 
+        intervals [37]:
+            xmin = 64.32333333333334 
+            xmax = 65.84408163265307 
+            text = "ream of my cream" 
+        intervals [38]:
+            xmin = 65.84408163265307 
+            xmax = 67.54346938775511 
+            text = "scent of my ascent" 
+        intervals [39]:
+            xmin = 67.54346938775511 
+            xmax = 69.24417233560091 
+            text = "swan of my ashwan" 
+        intervals [40]:
+            xmin = 69.24417233560091 
+            xmax = 70.98419501133787 
+            text = "tiff of my stiff" 
+        intervals [41]:
+            xmin = 70.98419501133787 
+            xmax = 72.96369614512473 
+            text = "top motion of my stop motion" 
+        intervals [42]:
+            xmin = 72.96369614512473 
+            xmax = 74.72419501133787 
+            text = "unction of my function" 
+        intervals [43]:
+            xmin = 74.72419501133787 
+            xmax = 76.52362811791384 
+            text = "urging of my purging" 
+        intervals [44]:
+            xmin = 76.52362811791384 
+            xmax = 78.02403628117915 
+            text = "vent of my event" 
+        intervals [45]:
+            xmin = 78.02403628117915 
+            xmax = 80.02410430839004 
+            text = "vocative of my evocative" 
+        intervals [46]:
+            xmin = 80.02410430839004 
+            xmax = 81.84396825396826 
+            text = "well of my swell" 
+        intervals [47]:
+            xmin = 81.84396825396826 
+            xmax = 84.16312925170068 
+            text = "wallowtail of my swallowtail" 
+        intervals [48]:
+            xmin = 84.16312925170068 
+            xmax = 86.52321995464854 
+            text = "x-factor of my x factor" 
+        intervals [49]:
+            xmin = 86.52321995464854 
+            xmax = 88.32328798185942 
+            text = "x of my axe" 
+        intervals [50]:
+            xmin = 88.32328798185942 
+            xmax = 89.88371882086169 
+            text = "ye of my eye" 
+        intervals [51]:
+            xmin = 89.88371882086169 
+            xmax = 91.96240362811793 
+            text = "y of my my" 
+        intervals [52]:
+            xmin = 91.96240362811793 
+            xmax = 96.3815873015873 
+            text = "zip zap zoff of my oh zippo zappo zoff" 
+        intervals [53]:
+            xmin = 96.3815873015873 
+            xmax = 100.64979591836735 
+            text = "zim zam zoom of my o zim o zam o zoom" 
