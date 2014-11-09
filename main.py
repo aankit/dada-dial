@@ -9,9 +9,9 @@ from audioSegmenter import AudioSegmenter
 import sys, os
 import pickle
 
-path = '/home/abp225'
+path = '/root/dada-dial'
 
-f = open(path + '/asterisk_agi/poemInfo.p', 'rb')
+f = open(path + '/poemInfo.p', 'rb')
 poemInfo = pickle.load(f)
 
 print poemInfo
@@ -19,7 +19,7 @@ print poemInfo
 tg = TextGrid(path)
 segmenter = AudioSegmenter(path)
 
-sounds_path = '/home/abp225/asterisk_sounds/'
+sounds_path = path + '/sounds/'
 
 structure = tg.generateText(2)
 
