@@ -21,21 +21,21 @@ for f in os.listdir(path):
     diff = test
     newestFile = f
 newestFile = newestFile[:-4]
-toPlay = '%s/%s' %(path, '/another') 
+toPlay = '%s/%s' %(path, newestFile) 
 # phone.verbose(toPlay)
 
 agi.stream_file(toPlay)
-# agi.appexec('Wait', 2)
-# result = agi.stream_file(path + '/another', escape_digits="123456789*#")
-# if not result:
-# 	result = agi.wait_for_digit(5)
-# agi.verbose("got digit %s" % result)
-# if result.isdigit() or result=='*' or result=='#':
-#     agi.set_context('test')
-#     agi.set_extension('aankit')
-#     agi.set_priority(4)
-#     sys.exit()
-# else:
-#   agi.verbose("bye!")
-#   agi.hangup()
-#   sys.exit()
+agi.appexec('Wait', 2)
+result = agi.stream_file(path + '/another', escape_digits="123456789*#")
+if not result:
+	result = agi.wait_for_digit(5)
+agi.verbose("got digit %s" % result)
+if result.isdigit() or result=='*' or result=='#':
+    agi.set_context('test')
+    agi.set_extension('aankit')
+    agi.set_priority(4)
+    sys.exit()
+else:
+  agi.verbose("bye!")
+  agi.hangup()
+  sys.exit()
