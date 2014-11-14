@@ -1,0 +1,166 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 238.02775 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "line" 
+        xmin = 0 
+        xmax = 238.02775 
+        intervals: size = 38 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.960447684302715 
+            text = "" 
+        intervals [2]:
+            xmin = 1.960447684302715 
+            xmax = 14.14925815259389 
+            text = "I'm a poet and I want to be allowed, I want the president to give me money and say here" 
+        intervals [3]:
+            xmin = 14.14925815259389 
+            xmax = 20.180326047441962 
+            text = "" 
+        intervals [4]:
+            xmin = 20.180326047441962 
+            xmax = 27.79206377827005 
+            text = "go buy all the drugs you want" 
+        intervals [5]:
+            xmin = 27.79206377827005 
+            xmax = 32.291387046485255 
+            text = "don't worry about getting bust or crazy" 
+        intervals [6]:
+            xmin = 32.291387046485255 
+            xmax = 38.83221241850216 
+            text = "go out and sit by the seashore and get high" 
+        intervals [7]:
+            xmin = 38.83221241850216 
+            xmax = 44.29429995177234 
+            text = "high as the flaming, yellow-white sunshine" 
+        intervals [8]:
+            xmin = 44.29429995177234 
+            xmax = 52.29148111929981 
+            text = "" 
+        intervals [9]:
+            xmin = 52.29148111929981 
+            xmax = 53.85123816620799 
+            text = "and moan" 
+        intervals [10]:
+            xmin = 53.85123816620799 
+            xmax = 55.47537730106019 
+            text = "and sigh" 
+        intervals [11]:
+            xmin = 55.47537730106019 
+            xmax = 71.22652899574112 
+            text = "and cry and feel it for every fucking one of this fucking planet, and cry salty tear drops and no sniffles and ease this burden for everybody" 
+        intervals [12]:
+            xmin = 71.22652899574112 
+            xmax = 74.88700047361576 
+            text = "" 
+        intervals [13]:
+            xmin = 74.88700047361576 
+            xmax = 83.5344760037383 
+            text = "and it's dawn one more time every morning when I wait to see the sun falling by again as this earth spins" 
+        intervals [14]:
+            xmin = 83.5344760037383 
+            xmax = 90.64031079931972 
+            text = "I'm half crazy but I'm happy. I calm myself and think about my friend" 
+        intervals [15]:
+            xmin = 90.64031079931972 
+            xmax = 93.8211265660287 
+            text = "jet planes streak the sky" 
+        intervals [16]:
+            xmin = 93.8211265660287 
+            xmax = 101.26738349989004 
+            text = "traffic light blinks out the red green yellow time pulse sirens, through the avenue" 
+        intervals [17]:
+            xmin = 101.26738349989004 
+            xmax = 108.65155009279664 
+            text = "and its dawn one more time, I'm waiting on the spin to bring the sun blazing through the silhouettes" 
+        intervals [18]:
+            xmin = 108.65155009279664 
+            xmax = 116.43668584619215 
+            text = "oh I'm pretty scared of people or a stranger almost every time I touch another face" 
+        intervals [19]:
+            xmin = 116.43668584619215 
+            xmax = 123.10338796756447 
+            text = "so put me in my place, old ancient home, and its dawn again" 
+        intervals [20]:
+            xmin = 123.10338796756447 
+            xmax = 134.8358285837724 
+            text = "I buy cigarettes in the grocery store on Meat St. dead bodies of meat on racks slide from truck to cold house 6th below L" 
+        intervals [21]:
+            xmin = 134.8358285837724 
+            xmax = 139.35995879788442 
+            text = "I want to have pigeons flying in my hair again" 
+        intervals [22]:
+            xmin = 139.35995879788442 
+            xmax = 144.12409852131609 
+            text = "at least wa*** sprout up in the park and stairs of a church" 
+        intervals [23]:
+            xmin = 144.12409852131609 
+            xmax = 146.16587268850108 
+            text = "there used to be flowers" 
+        intervals [24]:
+            xmin = 146.16587268850108 
+            xmax = 151.58275078696366 
+            text = "junk, flesh, power, three things we can do without" 
+        intervals [25]:
+            xmin = 151.58275078696366 
+            xmax = 161.8174216492397 
+            text = "maybe you brought me down so much, maybe it brought me down so much, maybe I got brought down so much I have to say goodbye" 
+        intervals [26]:
+            xmin = 161.8174216492397 
+            xmax = 167.860153978633 
+            text = "I live when the clouds move in the sky and I can see it from my window" 
+        intervals [27]:
+            xmin = 167.860153978633 
+            xmax = 176.36943124368827 
+            text = "Face and hair, scattered and tossled by the same currents reeling in time" 
+        intervals [28]:
+            xmin = 176.36943124368827 
+            xmax = 192.8725285548521 
+            text = "it's cold in the night wilderness waiting for the sun nothing to do but keep warm build a fire out of twigs found nearby waiting, waiting for that pale blue light in the eastern sky" 
+        intervals [29]:
+            xmin = 192.8725285548521 
+            xmax = 202.30988522483733 
+            text = "where star after star rises high into the deep night sky and the desert is still, no birds no wind" 
+        intervals [30]:
+            xmin = 202.30988522483733 
+            xmax = 205.02820954518893 
+            text = "just the river flow sound nearby" 
+        intervals [31]:
+            xmin = 205.02820954518893 
+            xmax = 207.17158427294336 
+            text = "no brilliant ideas" 
+        intervals [32]:
+            xmin = 207.17158427294336 
+            xmax = 211.3090467267227 
+            text = "bad luck, some rain, some rain" 
+        intervals [33]:
+            xmin = 211.3090467267227 
+            xmax = 213.88621893197782 
+            text = "it's a long long time" 
+        intervals [34]:
+            xmin = 213.88621893197782 
+            xmax = 216.67045643268466 
+            text = " can't help but be amused" 
+        intervals [35]:
+            xmin = 216.67045643268466 
+            xmax = 221.81275959028108 
+            text = "till it gets light enough to go home and figure it out" 
+        intervals [36]:
+            xmin = 221.81275959028108 
+            xmax = 225.13837660501423 
+            text = "" 
+        intervals [37]:
+            xmin = 225.13837660501423 
+            xmax = 233.47442437375733 
+            text = "Kali is the goddess of that Hindu Pantheon, she is the mother of all and also the bringer of death" 
+        intervals [38]:
+            xmin = 233.47442437375733 
+            xmax = 238.02775 
+            text = "small prayer for falling angel" 

@@ -1,0 +1,226 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 159.347 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "line" 
+        xmin = 0 
+        xmax = 159.347 
+        intervals: size = 53 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.24793466553288 
+            text = "I am that I am" 
+        intervals [2]:
+            xmin = 1.24793466553288 
+            xmax = 3.1143518990929704 
+            text = "I am that am I" 
+        intervals [3]:
+            xmin = 3.1143518990929704 
+            xmax = 5.907662556689343 
+            text = "Am I that, I am" 
+        intervals [4]:
+            xmin = 5.907662556689343 
+            xmax = 7.747685232426304 
+            text = "Am I that I am" 
+        intervals [5]:
+            xmin = 7.747685232426304 
+            xmax = 9.648637613378686 
+            text = "I that I am am" 
+        intervals [6]:
+            xmin = 9.648637613378686 
+            xmax = 11.108184098639457 
+            text = "Am that I?" 
+        intervals [7]:
+            xmin = 11.108184098639457 
+            xmax = 12.227821286848073 
+            text = "Am I?" 
+        intervals [8]:
+            xmin = 12.227821286848073 
+            xmax = 13.967707908163266 
+            text = "That I am I am" 
+        intervals [9]:
+            xmin = 13.967707908163266 
+            xmax = 15.648252125850341 
+            text = "That am I I am" 
+        intervals [10]:
+            xmin = 15.648252125850341 
+            xmax = 16.74759452947846 
+            text = "That I am" 
+        intervals [11]:
+            xmin = 16.74759452947846 
+            xmax = 17.868320153061227 
+            text = "Am I " 
+        intervals [12]:
+            xmin = 17.868320153061227 
+            xmax = 22.24822945011338 
+            text = "That I I am am That am I am I" 
+        intervals [13]:
+            xmin = 22.24822945011338 
+            xmax = 23.800807964852606 
+            text = "I that I am am I" 
+        intervals [14]:
+            xmin = 23.800807964852606 
+            xmax = 30.8775695861678 
+            text = "I I that I am am I am I am that I am am I that" 
+        intervals [15]:
+            xmin = 30.8775695861678 
+            xmax = 35.00563704648526 
+            text = "Am I that I am I am that I am am I that I am" 
+        intervals [16]:
+            xmin = 35.00563704648526 
+            xmax = 36.88258234126984 
+            text = "I am am I that" 
+        intervals [17]:
+            xmin = 36.88258234126984 
+            xmax = 37.52129817202672 
+            text = "" 
+        intervals [18]:
+            xmin = 37.52129817202672 
+            xmax = 39.125121317114015 
+            text = "I am I am that" 
+        intervals [19]:
+            xmin = 39.125121317114015 
+            xmax = 41.76800590110556 
+            text = "I am am that I" 
+        intervals [20]:
+            xmin = 41.76800590110556 
+            xmax = 44.491568199192294 
+            text = "am that am I am that" 
+        intervals [21]:
+            xmin = 44.491568199192294 
+            xmax = 46.00128585600907 
+            text = "am I I" 
+        intervals [22]:
+            xmin = 46.00128585600907 
+            xmax = 48.124249295472055 
+            text = "am that I, I am" 
+        intervals [23]:
+            xmin = 48.124249295472055 
+            xmax = 50.190029805781 
+            text = "am that I am" 
+        intervals [24]:
+            xmin = 50.190029805781 
+            xmax = 53.55344069083535 
+            text = "am that I am am that" 
+        intervals [25]:
+            xmin = 53.55344069083535 
+            xmax = 56.455058188102726 
+            text = "I am I that I am I am" 
+        intervals [26]:
+            xmin = 56.455058188102726 
+            xmax = 66.11067415946648 
+            text = "That I am" 
+        intervals [27]:
+            xmin = 66.11067415946648 
+            xmax = 67.78356705921469 
+            text = "I'm that" 
+        intervals [28]:
+            xmin = 67.78356705921469 
+            xmax = 71.95940683443436 
+            text = "I am am that" 
+        intervals [29]:
+            xmin = 71.95940683443436 
+            xmax = 78.25450167598744 
+            text = "am that I am" 
+        intervals [30]:
+            xmin = 78.25450167598744 
+            xmax = 82.55864041002204 
+            text = "I am that I am" 
+        intervals [31]:
+            xmin = 82.55864041002204 
+            xmax = 86.55181357640032 
+            text = "I am that I" 
+        intervals [32]:
+            xmin = 86.55181357640032 
+            xmax = 94.64393127252681 
+            text = "Am I am that am I I am that I am" 
+        intervals [33]:
+            xmin = 94.64393127252681 
+            xmax = 98.47267265304717 
+            text = "I am that I am" 
+        intervals [34]:
+            xmin = 98.47267265304717 
+            xmax = 100.7132841752254 
+            text = "I am that" 
+        intervals [35]:
+            xmin = 100.7132841752254 
+            xmax = 103.94552642526101 
+            text = "am I? am I that?" 
+        intervals [36]:
+            xmin = 103.94552642526101 
+            xmax = 108.05950378939578 
+            text = "I am, am I I that I am?" 
+        intervals [37]:
+            xmin = 108.05950378939578 
+            xmax = 111.15222178285075 
+            text = "I that am am" 
+        intervals [38]:
+            xmin = 111.15222178285075 
+            xmax = 115.25827324967042 
+            text = "am that I am I that I am" 
+        intervals [39]:
+            xmin = 115.25827324967042 
+            xmax = 116.8556093735445 
+            text = "I am" 
+        intervals [40]:
+            xmin = 116.8556093735445 
+            xmax = 118.0328121806793 
+            text = "that am I" 
+        intervals [41]:
+            xmin = 118.0328121806793 
+            xmax = 118.88569307500099 
+            text = "I am" 
+        intervals [42]:
+            xmin = 118.88569307500099 
+            xmax = 121.60344620663918 
+            text = "that I am am I" 
+        intervals [43]:
+            xmin = 121.60344620663918 
+            xmax = 123.54863482198826 
+            text = "that I I am am " 
+        intervals [44]:
+            xmin = 123.54863482198826 
+            xmax = 125.90834452947846 
+            text = "that am I am I" 
+        intervals [45]:
+            xmin = 125.90834452947846 
+            xmax = 130.4647370924953 
+            text = "I that I am am I, I I that I am" 
+        intervals [46]:
+            xmin = 130.4647370924953 
+            xmax = 133.19355514974282 
+            text = "am I am I" 
+        intervals [47]:
+            xmin = 133.19355514974282 
+            xmax = 138.63732892727674 
+            text = "am that I am am I that am I that I am" 
+        intervals [48]:
+            xmin = 138.63732892727674 
+            xmax = 147.21575951895085 
+            text = "am I that am I am, I that am I am, I that am I am, I that am I, am I that, am I that, am I that, am i, am i, am i, am i, am i " 
+        intervals [49]:
+            xmin = 147.21575951895085 
+            xmax = 150.4386894085249 
+            text = "I am that I am, I am that I" 
+        intervals [50]:
+            xmin = 150.4386894085249 
+            xmax = 153.75552731790998 
+            text = "am I, am that, I am" 
+        intervals [51]:
+            xmin = 153.75552731790998 
+            xmax = 155.46533324239348 
+            text = "I am that I am" 
+        intervals [52]:
+            xmin = 155.46533324239348 
+            xmax = 157.47905578556157 
+            text = "I am that I am" 
+        intervals [53]:
+            xmin = 157.47905578556157 
+            xmax = 159.347 
+            text = "" 
