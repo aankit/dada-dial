@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 from pydub import AudioSegment, silence
-# from pydub.utils import db_to_float
-# import time
+import math
 	
 class AudioSegmenter(object):
 	
@@ -25,11 +24,6 @@ class AudioSegmenter(object):
 	def exportFile(self, sounds_path, filename):
 		self.poem = self.poem.set_frame_rate(8000)
 		self.poem.export(sounds_path + filename, format="wav")
-
-	def cutbySilence(self, audio, r=1):
-		silence_thresh = audio.dBFS - 4/r
-		audio_split = silence.split_on_silence(audio, min_silence_len=750, silence_thresh=silence_thresh)
-		return audio_split
 
 if __name__ == '__main__':
 	segmenter = AudioSegmenter()
