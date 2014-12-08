@@ -21,8 +21,8 @@ def fft_harmonics(filepath):
 	#ipython specific! maybe run with ipython?
 	# get_ipython().magic(u'matplotlib inline')
 
-	p = numpy.fft.fft(snd) #the FFT transform...how to speed this up? FFTW will do this in C
-	n = float(len(snd)) #number of samples?
+	p = numpy.fft.fft(snd) #amplitude in frequency domains
+	n = float(len(snd)) #number of samples, amplitude in the time domain
 
 	nUniquePts = math.ceil((n+1)/2.0)
 	#err....
