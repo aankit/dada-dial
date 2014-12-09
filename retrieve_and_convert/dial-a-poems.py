@@ -50,13 +50,14 @@ def cutbySilence(audio, r=1):
 	 	keep_silence=250, 
 	 	silence_thresh=silence_thresh)
 	#cuts that are still too long, maybe an area of higher overall dBFS
-	long_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>15]
-	for split in long_splits:
-		audio_splits.remove(split)
-		#cut recursively
-		new_splits = cutbySilence(split, r=r+1)
-		for ns in new_splits:
-			audio_splits.append(ns)
+	long_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>20]
+	if r != 2:
+		for split in long_splits:
+			audio_splits.remove(split)
+			#cut recursively
+			new_splits = cutbySilence(split, r=r+1)
+			for ns in new_splits:
+				audio_splits.append(ns)
 	#clean the cuts of anything too short
 	audio_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>.5]
 	return audio_splits
@@ -84,7 +85,7 @@ for link in links[1:2]:
 	soup = BeautifulSoup(r.text)
 	poemLinks = [a['href'] for a in soup.findAll('a',href=re.compile('http.*\.mp3'))]
 	opener = URLopener()
-	for poemLink in poemLinks[:3]: 
+	for poemLink in poemLinks[:6]: 
 		print poemLink
 		#download and save file to temp file
 		filename = urlparse(poemLink).path.split('/')[-1]
