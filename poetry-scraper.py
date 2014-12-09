@@ -11,8 +11,8 @@ from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 #file paths
-final_audio = 'root/dada-dial/ubu/'
-temp = 'root/dada-dial/temp/'
+final_audio = '/root/dada-dial/ubu/'
+temp = '/root/dada-dial/temp/'
 
 def fundamental_fft(filepath):
 	sampFreq, snd = wavfile.read(filepath)
@@ -43,9 +43,12 @@ def fundamental_fft(filepath):
 	fundamental = df[df.power==df.power.max()].index[0]
 	#hack to deal with telephony Hz range of 300-3400, ala missing fundamentals
 	if fundamental < 300.0: #telephony cut-off
-		multiplier = round(300.0/fundamental) #use harmonic above 300
+		multiplier = math.ceil(300.0/fundamental) #use harmonic above 300
+		if multiplier <=1: multiplier = 2
 		fundamental = fundamental * multiplier
-	return (fundamental, df.get_value(fundamental, col='power'))
+		return fundamental
+	else:
+		return fundamental
 	# harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
 	# harmonics = df[df.index.isin(harmonic_frequencies)]
 	# return harmonics.itertuples()
@@ -83,14 +86,14 @@ ubu_sound = BeautifulSoup(ubu_sound_html.text)
 links = ubu_sound.findAll('a')
 
 #first link is home
-for link in links[1:2]:
+for link in links[1:]:
 	#the first character in the link refers to base url
 	link = ubu_url + link.get('href')[1:]
 	r = requests.get(link)
 	soup = BeautifulSoup(r.text)
 	poemLinks = [a['href'] for a in soup.findAll('a',href=re.compile('http.*\.mp3'))]
 	opener = URLopener()
-	for poemLink in poemLinks[:6]: 
+	for poemLink in poemLinks: 
 		print poemLink
 		#download and save file to temp file
 		filename = urlparse(poemLink).path.split('/')[-1]
@@ -108,11 +111,10 @@ for link in links[1:2]:
 		for line in lines:
 			line_num += 1
 			line_filename = filename[:-4] + leadingZeros(line_num) + '.wav'
-			print line_filename
 			#save the lines...oh sweet golden, delicious lines
 			wave = line.export(final_audio + line_filename, format='wav')
 			#get the fundamental + harmonics info
-			frequency, power  = fundamental_fft(final_audio + line_filename)
+			frequency  = fundamental_fft(final_audio + line_filename)
 			print frequency, line.dBFS, line.duration_seconds
 			try:
 				l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
@@ -123,33 +125,38 @@ for link in links[1:2]:
 					f_obj = db_session.query(Fundamental).filter_by(frequency=int(frequency)).one()
 				except NoResultFound:
 					f_obj = Fundamental(frequency=int(frequency))
+					db_session.add(f_obj)
+					db_session.commit()
 				try:
 					db_obj = db_session.query(DBFS).filter_by(dbfs=int(line.dBFS)).one()
 				except NoResultFound:
 					db_obj = DBFS(dbfs=int(line.dBFS))
+					db_session.add(db_obj)
+					db_session.commit()
 				try:
 					d_obj = db_session.query(Duration).filter_by(duration=int(line.duration_seconds)).one()
 				except NoResultFound:
 					d_obj = Duration(duration=int(line.duration_seconds))
-				try:
-					db_session.add_all([f_obj, db_obj, d_obj])
+					db_session.add(d_obj)
 					db_session.commit()
+				print 'attributes committed'
+				try:
 					l_obj = Line(filename=line_filename, 
 						fundamental_id = f_obj.id,
 						dbfs_id = db_obj.id,
 						duration_id = d_obj.id
 					)
 					print l_obj.filename, l_obj.fundamental_id, l_obj.dbfs_id, l_obj.duration_id
-					try:
-						db_session.add(l_obj)
-						db_session.commit()
-						print 'success'
-					except Exception,e:
-						print str(e)
-						print 'failed to add line'
-						db_session.rollback()
-				except:
-					print 'failed to add audio objects'
+					db_session.add(l_obj)
+					db_session.commit()
+					print 'success, line committed'
+				except Exception,e:
+					print str(e)
+					print 'failed to add line'
+					db_session.rollback()
+			except Exception,e:
+				print str(e)
+				print 'failed to add audio objects'
 
 
 

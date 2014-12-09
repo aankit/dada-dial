@@ -1,7 +1,8 @@
 from sound_tools.pydubtools import PoemBuilder, Tools
 from sound_tools.dadaFFT import dadaFFT
 from dadasql.database import db_session
-from dadasql.model import Line, Duration, Fundamental, DBFS
+from dadasql.model import Line, Fundamental, DBFS, Duration
+from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 path = '/root/dada-dial/sounds/'
 filename = 'user.wav'
@@ -18,5 +19,8 @@ for s in user_splits:
 	fundamental, power = s_fft.get_fundamental()
 	split_fundamentals.append(int(fundamental))
 #got all the user input information, now we need to find lines that match
-for duration in split_durations:
-	duration_results = 
+for d in split_durations:
+	try:
+		duration_results = db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()
+	except NoResultsFound:
+		
