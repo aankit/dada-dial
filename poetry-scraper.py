@@ -6,13 +6,9 @@ from urlparse import urlparse
 from bs4 import BeautifulSoup
 from scipy.io import wavfile
 import pandas as pd
-from dadasql.database import Base, db_session, engine
+from dadasql.database import db_session
 from dadasql.model import Line, Fundamental, DBFS, Duration
-from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
-
-#db setup
-
 
 #file paths
 final_audio = './ubu/'
@@ -82,9 +78,6 @@ ubu_sound_html = requests.get(ubu_url)
 ubu_sound = BeautifulSoup(ubu_sound_html.text)
 links = ubu_sound.findAll('a')
 
-#create a dict of poems or potentially a database, in the future
-poem_dict = {}
-
 #first link is home
 for link in links[1:2]:
 	#the first character in the link refers to base url
@@ -153,10 +146,6 @@ for link in links[1:2]:
 						db_session.rollback()
 				except:
 					print 'failed to add audio objects'
-
-
-				
-print poem_dict
 
 
 
