@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from scipy.io import wavfile
 import pandas as pd
 from dadasql.database import db_session
-from dadasql.model import Line, Fundamental, DBFS, Duration
+from dadasql.model import Line, Fundamental, DBFS, Duration, Poem
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 #file paths
@@ -94,12 +94,12 @@ for link in links[1:]:
 	poemLinks = [a['href'] for a in soup.findAll('a',href=re.compile('http.*\.mp3'))]
 	opener = URLopener()
 	for poemLink in poemLinks: 
-		print poemLink
 		try:
 			pl = db_session.query(Poem).filter_by(poem==poemLink).one()
 		except NoResultFound:
 			p_obj = Poem(poem=poemLink)
 			db_session.add(p_obj)
+			print 'added poem %s' %poemLink
 			db_session.commit()
 			#download and save file to temp file
 			filename = urlparse(poemLink).path.split('/')[-1]
