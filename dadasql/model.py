@@ -27,6 +27,5 @@ class DBFS(Base):
 class Duration(Base):
 	__tablename__ = 'duration'
 	id = Column(Integer, primary_key=True)
-	line_id = Column(Integer, ForeignKey('line.id'), nullable=False)
 	duration = Column(Float(precision=1), nullable=False)
 	lines = relationship('Line', backref='duration')
