@@ -57,6 +57,17 @@ class Tools(object):
 		audio_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>.5]
 		return audio_splits
 
+	def silenceLengths(self, r=1):
+		silence_thresh = self.audio.dBFS - 4/r
+		silence_ranges = silence.detect_silence(self.audio,
+			min_silence_len=1000,
+			keep_silence=150,
+			silence_thresh=silence_thresh)
+		silence_lengths = []
+		for sr in silence_ranges:
+			silence_lengths.append(sr[1]-sr[0])
+		return silence_lengths
+
 if __name__ == '__main__':
 	segmenter = Tools('./sounds/', 'The-Dial-A-Poem-Poets_01_ginsberg.wav')
 	segmenter.cutbySilence()

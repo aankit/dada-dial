@@ -10,6 +10,7 @@ filename = 'user.wav'
 #create pydub audio file
 user_audio = Tools(path, filename)
 
+user_rests = user_audio.silenceLengths()
 user_splits = user_audio.cutbySilence()
 split_durations = [int(s.duration_seconds) for s in user_splits]
 split_dbfs = [int(s.dBFS) for s in user_splits]
