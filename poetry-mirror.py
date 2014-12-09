@@ -54,7 +54,7 @@ for i in range(0, len(user_splits)):
 	else:
 		line = random.choice(second_best)
 	line_filename = db_session.query(Line.filename).filter_by(id=line).one()
-	poem.addToFile('/root/dada-dial/ubu/' + line_filename)
+	poem.addtoFile('/root/dada-dial/ubu/' + line_filename[0])
 
 
 poem_filename = 'poem.wav'
