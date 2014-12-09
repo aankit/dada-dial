@@ -92,6 +92,7 @@ for link in links[1:]:
 	if clean_link[1] == '.':
 		clean_link = link.get('href')[1:]
 	req_link = ubu_url + clean_link
+	print req_link
 	r = requests.get(req_link)
 	soup = BeautifulSoup(r.text)
 	poemLinks = [a['href'] for a in soup.findAll('a',href=re.compile('http.*\.mp3'))]
