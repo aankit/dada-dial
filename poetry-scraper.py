@@ -1,7 +1,7 @@
 #download and conversion of mp3 to wav
 from pydub import AudioSegment, silence
 from urllib import URLopener
-import re, os, math, numpy, requests
+import re, os, math, numpy, requests, urllib
 from urlparse import urlparse
 from bs4 import BeautifulSoup
 from scipy.io import wavfile
