@@ -11,8 +11,8 @@ from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 #file paths
-final_audio = './ubu/'
-temp = './temp/'
+final_audio = 'root/dada-dial/ubu/'
+temp = 'root/dada-dial/temp/'
 
 def fundamental_fft(filepath):
 	sampFreq, snd = wavfile.read(filepath)
@@ -150,7 +150,6 @@ for link in links[1:2]:
 						db_session.rollback()
 				except:
 					print 'failed to add audio objects'
-
 
 
 
