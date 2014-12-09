@@ -90,7 +90,7 @@ for link in links[1:]:
 	#the first character in the link refers to base url
 	print link
 	clean_link = link.get('href')[1:]
-	if clean_link[1] == '.':
+	if clean_link[0] == '.':
 		clean_link = link.get('href')[1:]
 	req_link = ubu_url + clean_link
 	print req_link
