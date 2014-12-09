@@ -41,6 +41,10 @@ def fundamental_fft(filepath):
 	freqArray = numpy.arange(0, nUniquePts, 1.0) * (sampFreq / n)
 	df = pd.DataFrame(p, index=freqArray, columns=['power'])
 	fundamental = df[df.power==df.power.max()].index[0]
+	#hack to deal with telephony Hz range of 300-3400, ala missing fundamentals
+	if fundamental < 300.0: #telephony cut-off
+		multiplier = round(300.0/fundamental) #use harmonic above 300
+		fundamental = fundamental * multiplier
 	return (fundamental, df.get_value(fundamental, col='power'))
 	# harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
 	# harmonics = df[df.index.isin(harmonic_frequencies)]
