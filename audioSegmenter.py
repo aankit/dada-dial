@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-from pydub import AudioSegment
-# from pydub.utils import db_to_float
-# import time
+from pydub import AudioSegment, silence
+import math
 	
 class AudioSegmenter(object):
 	
@@ -25,26 +24,6 @@ class AudioSegmenter(object):
 	def exportFile(self, sounds_path, filename):
 		self.poem = self.poem.set_frame_rate(8000)
 		self.poem.export(sounds_path + filename, format="wav")
-
-	def cutbySilence(self, filename):
-		# Let's load up the audio we need...
-		audio = AudioSegment.from_wav(self.path +filename)
-		# Let's consider anything that is 30 decibels quieter than
-		# the average volume of the podcast to be silence
-		average_loudness = audio.rms
-		silence_threshold = average_loudness
-
-		# filter out the silence
-		audio_parts = (ms for ms in audio if ms.rms > silence_threshold)
-
-		# combine all the chunks back together
-		audio = reduce(lambda a, b: a + b, audio_parts)
-
-		# add on the bumpers
-		# podcast = intro + podcast + outro
-
-		# save the result
-		audio.export(self.path + filename, format="wav")
 
 if __name__ == '__main__':
 	segmenter = AudioSegmenter()
