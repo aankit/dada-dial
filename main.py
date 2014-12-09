@@ -5,7 +5,7 @@
 #by Aankit Patel
 
 from textGrid import TextGrid
-from audioSegmenter import AudioSegmenter
+from pydubtools import PoemBuilder, Tools
 import sys, os
 import pickle
 
@@ -17,7 +17,7 @@ poemInfo = pickle.load(f)
 print poemInfo
 
 tg = TextGrid(path)
-segmenter = AudioSegmenter(path)
+segmenter = PoemBuilder(path)
 
 sounds_path = path + '/sounds/'
 
@@ -32,7 +32,7 @@ for line in structure:
 		poet = [poem['poet'] for poem in poemInfo if poem['filename'][:-4]==filename]
 		title = [poem['title'] for poem in poemInfo if poem['filename'][:-4]==filename]
 		attribution += '%s by %s |' % (title, poet)
-		segmenter.poem += segmenter.cut(filename, interval.start_time, interval.end_time)
+		segmenter.poem += segmenter.get_slice(filename, interval.start_time, interval.end_time)
 
 filename = 'poem.wav'
 segmenter.exportFile(sounds_path, filename)
