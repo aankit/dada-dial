@@ -1,6 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, Float, String, Table, Text
 from sqlalchemy.ext.declarative import declarative_base
-from tweetsql.database import Base
+from dadasql.database import Base
 
 class Line(Base):
 	__tablename__ = 'line'

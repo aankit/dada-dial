@@ -6,6 +6,13 @@ from urlparse import urlparse
 from bs4 import BeautifulSoup
 from scipy.io import wavfile
 import pandas as pd
+from dadasql.database import Base, db_session, engine
+from dadasql.model import Line
+from sqlalchemy.exc import OperationalError
+from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
+
+#db setup
+
 
 #file paths
 final_audio = './ubu/'
@@ -40,14 +47,14 @@ def fft_harmonics(filepath):
 	fundamental = df[df.power==df.power.max()].index[0]
 	harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
 	harmonics = df[df.index.isin(harmonic_frequencies)]
-	return harmonics
+	return harmonics.itertuples()
 
 def cutbySilence(audio, r=1):
 	#using dBFS to normalize the silence across files
 	silence_thresh = audio.dBFS - 4/r
 	audio_splits = silence.split_on_silence(audio,
 	 	min_silence_len=1000, 
-	 	keep_silence=250, 
+	 	keep_silence=150, 
 	 	silence_thresh=silence_thresh)
 	#cuts that are still too long, maybe an area of higher overall dBFS
 	long_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>20]
@@ -107,8 +114,24 @@ for link in links[1:2]:
 			#save the lines...oh sweet golden, delicious lines
 			wave = line.export(final_audio + line_filename, format='wav')
 			#save the fundamental + harmonics info
-			poem_dict[line_filename] = fft_harmonics(final_audio + line_filename)
+			line_harmonics = fft_harmonics(final_audio + line_filename)
+			try:
+				l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
+			except MultipleResultsFound:
+				pass
+			except NoResultFound:
+				for frequency, power in line_harmonics:
+					l_obj = Line(filename=line_filename, 
+						linenum= line_num, 
+						frequency=round(frequency,4), 
+						power=round(power, 4)
+					)
+					print l_obj
+					db_session.add(l_obj)
+					db_session.commit()
+					print 'success'
 
+				
 print poem_dict
 
 
