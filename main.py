@@ -21,7 +21,7 @@ segmenter = PoemBuilder(path)
 
 sounds_path = path + '/sounds/'
 
-structure = tg.generateText(2)
+structure = tg.generateText(4)
 
 #create new wav file for our poem
 attribution = ''

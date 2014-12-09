@@ -1,5 +1,5 @@
-from pydubtools import PoemBuilder, Tools
-from dadaFFT import dadaFFT
+from sound_tools.pydubtools import PoemBuilder, Tools
+from sound_tools.dadaFFT import dadaFFT
 
 path = '/root/dada-dial/sounds/'
 filename = 'user.wav'

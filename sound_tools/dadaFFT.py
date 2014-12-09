@@ -38,8 +38,8 @@ class dadaFFT(object):
 		self.harmonics = self.fft_data[self.fft_data.index.isin(self.harmonic_frequencies)]
 
 
-	def fundamental(self):
+	def get_fundamental(self):
 		return (self.fundamental, self.fft_data.get_value(self.fundamental, col='power'))
 
-	def harmonics(self):
+	def get_harmonics(self):
 		return self.harmonics.itertuples()
