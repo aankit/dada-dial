@@ -98,6 +98,9 @@ for link in links[1:]:
 		try:
 			pl = db_session.query(Poem).filter_by(poem==poemLink).one()
 		except NoResultFound:
+			p_obj = Poem(poem=poemLink)
+			db_session.add(p_obj)
+			db_session.commit()
 			#download and save file to temp file
 			filename = urlparse(poemLink).path.split('/')[-1]
 			opener.retrieve(poemLink, temp + filename)
