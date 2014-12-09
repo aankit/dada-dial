@@ -130,6 +130,8 @@ for link in links[1:]:
 				wave = line.export(final_audio + line_filename, format='wav')
 				#get the fundamental + harmonics info
 				frequency  = fundamental_fft(final_audio + line_filename)
+				if math.isnan(frequency):
+					continue
 				print frequency, line.dBFS, line.duration_seconds
 				try:
 					l = db_session.query(Line.filename).filter_by(filename=line_filename).one()

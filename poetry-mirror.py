@@ -2,7 +2,7 @@ from sound_tools.pydubtools import PoemBuilder, Tools
 from sound_tools.dadaFFT import dadaFFT
 from dadasql.database import db_session
 from dadasql.model import Line, Fundamental, DBFS, Duration
-from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
+from sqlalchemy.orm.exc import NoResultFound
 import random
 
 path = '/root/dada-dial/sounds/'
@@ -20,9 +20,27 @@ for s in user_splits:
 	fundamental, power = s_fft.get_fundamental()
 	split_fundamentals.append(int(fundamental))
 #got all the user input information, now we need to find lines that match
+#match on duration
+duration_results = []
 for d in split_durations:
 	try:
-		duration_results = [d[0] for d db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()]
+		duration_results.append([d[0] for d in db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()])
 	except NoResultFound:
-		adjust = random.randint(3,15)
-		duration_results = db_session.query(line.id).join(Duration.lines).filter(Duratin.duration==adjust).all()
+		adjust = random.randint(1,d)
+		duration_results.append([d[0] for d in db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==adjust).all()])
+#match on dbfs
+dbfs_results = []
+for d in split_dbfs:
+	try:
+		dbfs_results.append([db[0] for db in db_session.query(Line.id).join(DBFS.lines).filter(DBFS.dbfs==d).all()])
+	except:
+		adjust = random.randint(d,0)
+		dbfs_results.append([db[0] for db in db_session.query(Line.id).join(DBFS.lines).filter(DBFS.dbfs==d).all()])
+#match on fundamental
+fundamental_results = []
+for f in split_fundamentals:
+	try:
+		dbfs_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency==f).all()])
+	except:
+		adjust = random.randint(d,0)
+		dbfs_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency==f).all()])
