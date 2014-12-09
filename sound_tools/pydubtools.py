@@ -21,6 +21,11 @@ class PoemBuilder(object):
 	def concatenate(self, first, second):
 		return first + second
 
+	def addtoFile(self, path_to_file):
+		new_audio = AudioSegment.from_wav(path_to_file)
+		print new_audio.duration_seconds
+		self.poem += new_audio
+
 	def exportFile(self, sounds_path, filename):
 		self.poem = self.poem.set_frame_rate(8000)
 		self.poem.export(sounds_path + filename, format="wav")

@@ -5,7 +5,7 @@
 #by Aankit Patel
 
 from textGrid import TextGrid
-from pydubtools import PoemBuilder, Tools
+from pydubtools import PoemBuilder
 import sys, os
 import pickle
 

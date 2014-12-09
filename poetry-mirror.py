@@ -40,7 +40,28 @@ for d in split_dbfs:
 fundamental_results = []
 for f in split_fundamentals:
 	try:
-		dbfs_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency==f).all()])
+		fundamental_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency==f).all()])
 	except:
-		adjust = random.randint(d,0)
-		dbfs_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency==f).all()])
+		adjust = range(f-10, f+10)
+		fundamental_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency.in_(adjust)).all()])
+
+poem = PoemBuilder('/root/dada-dial') 
+for i in range(0, len(user_splits)):
+	best = list(set(duration_results[i]) & set(dbfs_results[i]) & set(fundamental_results[i]))
+	second_best = list(set(duration_results[i]) & set(dbfs_results[i]))
+	if best:
+		line = random.choice(best)
+	else:
+		line = random.choice(second_best)
+	line_filename = db_session.query(Line.filename).filter_by(id=line).one()
+	poem.addToFile('/root/dada-dial/ubu/' + line_filename)
+
+
+poem_filename = 'poem.wav'
+poem.exportFile(path, poem_filename)
+
+
+
+
+
+
