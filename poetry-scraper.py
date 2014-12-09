@@ -103,7 +103,10 @@ for link in links[1:]:
 			db_session.commit()
 			#download and save file to temp file
 			filename = urlparse(poemLink).path.split('/')[-1]
-			opener.retrieve(poemLink, temp + filename)
+			try:
+				opener.retrieve(poemLink, temp + filename)
+			except:
+				continue
 			#open and convert file to mono, 8000Hz
 			poem = AudioSegment.from_mp3(temp + filename)
 			poem = poem.set_channels(1)
