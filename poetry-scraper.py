@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from scipy.io import wavfile
 import pandas as pd
 from dadasql.database import Base, db_session, engine
-from dadasql.model import Line
+from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
@@ -115,19 +115,24 @@ for link in links[1:2]:
 			wave = line.export(final_audio + line_filename, format='wav')
 			#save the fundamental + harmonics info
 			line_harmonics = fft_harmonics(final_audio + line_filename)
-			try:
-				l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
-			except MultipleResultsFound:
-				pass
-			except NoResultFound:
-				for frequency, power in line_harmonics:
+			for frequency, power in line_harmonics:
+				try:
+					l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
+				except MultipleResultsFound:
+					pass
+				except NoResultFound:
+					f_obj = Fundamental(
+						frequency=round(frequency,1), 
+						power=round(power, 1)
+						)
+					db_obj = DBFS(volume=round(line.dBFS,1))
+					d_obj = Duration(duration=round(line.duration_seconds,1))
 					l_obj = Line(filename=line_filename, 
-						linenum= line_num, 
-						frequency=round(frequency,4), 
-						power=round(power, 4)
-					)
-					print l_obj
-					db_session.add(l_obj)
+						fundamental_id = f_obj.id,
+						dbfs_id = db_obj.id,
+						duration_id = d_obj.id
+						) 
+					db_session.add_all([f_obj, db_obj, d_obj, l_obj])
 					db_session.commit()
 					print 'success'
 
