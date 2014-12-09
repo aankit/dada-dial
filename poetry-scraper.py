@@ -95,68 +95,71 @@ for link in links[1:]:
 	opener = URLopener()
 	for poemLink in poemLinks: 
 		print poemLink
-		#download and save file to temp file
-		filename = urlparse(poemLink).path.split('/')[-1]
-		opener.retrieve(poemLink, temp + filename)
-		#open and convert file to mono, 8000Hz
-		poem = AudioSegment.from_mp3(temp + filename)
-		poem = poem.set_channels(1)
-		poem = poem.set_frame_rate(8000)
-		#erase temp file
-		os.remove(temp + filename)
-		#cut the poem into lines based on silence
-		lines = cutbySilence(poem)
-		#number the lines
-		line_num = 0
-		for line in lines:
-			line_num += 1
-			line_filename = filename[:-4] + leadingZeros(line_num) + '.wav'
-			#save the lines...oh sweet golden, delicious lines
-			wave = line.export(final_audio + line_filename, format='wav')
-			#get the fundamental + harmonics info
-			frequency  = fundamental_fft(final_audio + line_filename)
-			print frequency, line.dBFS, line.duration_seconds
-			try:
-				l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
-			except MultipleResultsFound:
-				pass
-			except NoResultFound:
+		try:
+			pl = db_session.query(Poem).filter_by(poem==poemLink).one()
+		except NoResultFound:
+			#download and save file to temp file
+			filename = urlparse(poemLink).path.split('/')[-1]
+			opener.retrieve(poemLink, temp + filename)
+			#open and convert file to mono, 8000Hz
+			poem = AudioSegment.from_mp3(temp + filename)
+			poem = poem.set_channels(1)
+			poem = poem.set_frame_rate(8000)
+			#erase temp file
+			os.remove(temp + filename)
+			#cut the poem into lines based on silence
+			lines = cutbySilence(poem)
+			#number the lines
+			line_num = 0
+			for line in lines:
+				line_num += 1
+				line_filename = filename[:-4] + leadingZeros(line_num) + '.wav'
+				#save the lines...oh sweet golden, delicious lines
+				wave = line.export(final_audio + line_filename, format='wav')
+				#get the fundamental + harmonics info
+				frequency  = fundamental_fft(final_audio + line_filename)
+				print frequency, line.dBFS, line.duration_seconds
 				try:
-					f_obj = db_session.query(Fundamental).filter_by(frequency=int(frequency)).one()
+					l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
+				except MultipleResultsFound:
+					pass
 				except NoResultFound:
-					f_obj = Fundamental(frequency=int(frequency))
-					db_session.add(f_obj)
-					db_session.commit()
-				try:
-					db_obj = db_session.query(DBFS).filter_by(dbfs=int(line.dBFS)).one()
-				except NoResultFound:
-					db_obj = DBFS(dbfs=int(line.dBFS))
-					db_session.add(db_obj)
-					db_session.commit()
-				try:
-					d_obj = db_session.query(Duration).filter_by(duration=int(line.duration_seconds)).one()
-				except NoResultFound:
-					d_obj = Duration(duration=int(line.duration_seconds))
-					db_session.add(d_obj)
-					db_session.commit()
-				print 'attributes committed'
-				try:
-					l_obj = Line(filename=line_filename, 
-						fundamental_id = f_obj.id,
-						dbfs_id = db_obj.id,
-						duration_id = d_obj.id
-					)
-					print l_obj.filename, l_obj.fundamental_id, l_obj.dbfs_id, l_obj.duration_id
-					db_session.add(l_obj)
-					db_session.commit()
-					print 'success, line committed'
+					try:
+						f_obj = db_session.query(Fundamental).filter_by(frequency=int(frequency)).one()
+					except NoResultFound:
+						f_obj = Fundamental(frequency=int(frequency))
+						db_session.add(f_obj)
+						db_session.commit()
+					try:
+						db_obj = db_session.query(DBFS).filter_by(dbfs=int(line.dBFS)).one()
+					except NoResultFound:
+						db_obj = DBFS(dbfs=int(line.dBFS))
+						db_session.add(db_obj)
+						db_session.commit()
+					try:
+						d_obj = db_session.query(Duration).filter_by(duration=int(line.duration_seconds)).one()
+					except NoResultFound:
+						d_obj = Duration(duration=int(line.duration_seconds))
+						db_session.add(d_obj)
+						db_session.commit()
+					print 'attributes committed'
+					try:
+						l_obj = Line(filename=line_filename, 
+							fundamental_id = f_obj.id,
+							dbfs_id = db_obj.id,
+							duration_id = d_obj.id
+						)
+						print l_obj.filename, l_obj.fundamental_id, l_obj.dbfs_id, l_obj.duration_id
+						db_session.add(l_obj)
+						db_session.commit()
+						print 'success, line committed'
+					except Exception,e:
+						print str(e)
+						print 'failed to add line'
+						db_session.rollback()
 				except Exception,e:
 					print str(e)
-					print 'failed to add line'
-					db_session.rollback()
-			except Exception,e:
-				print str(e)
-				print 'failed to add audio objects'
+					print 'failed to add audio objects'
 
 
 

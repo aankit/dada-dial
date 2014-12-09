@@ -3,6 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from dadasql.database import Base
 
+class Poem(Base):
+	__tablename__ = 'poem'
+	id = Column(Integer, primary_key=True)
+	poem = Column(String(200), nullable=False)
+
 class Line(Base):
 	__tablename__ = 'line'
 	id = Column(Integer, primary_key=True)
