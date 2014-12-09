@@ -118,6 +118,8 @@ for link in links[1:]:
 			#number the lines
 			line_num = 0
 			for line in lines:
+				if line.duration_seconds > 30:
+					continue
 				line_num += 1
 				line_filename = filename[:-4] + leadingZeros(line_num) + '.wav'
 				#save the lines...oh sweet golden, delicious lines
