@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+#Dada Dial
+#ITP Redial Final
+#by Aankit Patel
+
 from sound_tools.pydubtools import PoemBuilder, Tools
 from sound_tools.dadaFFT import dadaFFT
 from dadasql.database import db_session
