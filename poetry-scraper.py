@@ -102,6 +102,10 @@ for link in links[1:]:
 			print 'added poem %s' %poemLink
 			db_session.commit()
 			#download and save file to temp file
+			#make sure its not massive
+			d = urllib.urlopen(poemLink)
+			if d.info()['Content-Length'] > 25000000:
+				continue
 			filename = urlparse(poemLink).path.split('/')[-1]
 			try:
 				opener.retrieve(poemLink, temp + filename)

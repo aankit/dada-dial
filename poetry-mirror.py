@@ -3,6 +3,7 @@ from sound_tools.dadaFFT import dadaFFT
 from dadasql.database import db_session
 from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
+import random
 
 path = '/root/dada-dial/sounds/'
 filename = 'user.wav'
@@ -21,6 +22,7 @@ for s in user_splits:
 #got all the user input information, now we need to find lines that match
 for d in split_durations:
 	try:
-		duration_results = db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()
-	except NoResultsFound:
-		
+		duration_results = [d[0] for d db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()]
+	except NoResultFound:
+		adjust = random.randint(3,15)
+		duration_results = db_session.query(line.id).join(Duration.lines).filter(Duratin.duration==adjust).all()
