@@ -13,7 +13,7 @@ split_fundamentals = []
 for s in user_splits:
 	s.export(path + 'temp.wav', format='wav')
 	s_fft = dadaFFT(path+'temp.wav')
-	fundamental = s_fft.fundamental()
+	fundamental, power = s_fft.get_fundamental()
 	split_fundamentals.append(fundamental)
 
 print split_fundamentals
