@@ -95,7 +95,7 @@ for link in links[1:]:
 	opener = URLopener()
 	for poemLink in poemLinks: 
 		try:
-			pl = db_session.query(Poem).filter_by(poem==poemLink).one()
+			pl = db_session.query(Poem).filter_by(poem=poemLink).one()
 		except NoResultFound:
 			p_obj = Poem(poem=poemLink)
 			db_session.add(p_obj)
