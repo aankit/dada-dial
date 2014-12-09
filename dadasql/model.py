@@ -14,18 +14,17 @@ class Line(Base):
 class Fundamental(Base):
 	__tablename__ = 'fundamental'
 	id = Column(Integer, primary_key=True)
-	frequency = Column(Float(precision=1), nullable=False)
-	power = Column(Float(precision=1), nullable=False)
+	frequency = Column(Integer, nullable=False)
 	lines = relationship('Line', backref='fundamental')
 
 class DBFS(Base):
 	__tablename__ = 'dbfs'
 	id = Column(Integer, primary_key=True)
-	dbfs = Column(Float(precision=1), nullable=False)
+	dbfs = Column(Integer, nullable=False)
 	lines = relationship('Line', backref='dbfs')
 
 class Duration(Base):
 	__tablename__ = 'duration'
 	id = Column(Integer, primary_key=True)
-	duration = Column(Float(precision=1), nullable=False)
+	duration = Column(Integer, nullable=False)
 	lines = relationship('Line', backref='duration')

@@ -18,7 +18,7 @@ from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 final_audio = './ubu/'
 temp = './temp/'
 
-def fft_harmonics(filepath):
+def fundamental_fft(filepath):
 	sampFreq, snd = wavfile.read(filepath)
 	snd = snd / (2.**15)
 	timeArray = numpy.arange(0, snd.shape[0], 1)
@@ -45,9 +45,10 @@ def fft_harmonics(filepath):
 	freqArray = numpy.arange(0, nUniquePts, 1.0) * (sampFreq / n)
 	df = pd.DataFrame(p, index=freqArray, columns=['power'])
 	fundamental = df[df.power==df.power.max()].index[0]
-	harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
-	harmonics = df[df.index.isin(harmonic_frequencies)]
-	return harmonics.itertuples()
+	return (fundamental, df.get_value(fundamental, col='power'))
+	# harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
+	# harmonics = df[df.index.isin(harmonic_frequencies)]
+	# return harmonics.itertuples()
 
 def cutbySilence(audio, r=1):
 	#using dBFS to normalize the silence across files
@@ -113,28 +114,46 @@ for link in links[1:2]:
 			print line_filename
 			#save the lines...oh sweet golden, delicious lines
 			wave = line.export(final_audio + line_filename, format='wav')
-			#save the fundamental + harmonics info
-			line_harmonics = fft_harmonics(final_audio + line_filename)
-			for frequency, power in line_harmonics:
+			#get the fundamental + harmonics info
+			frequency, power  = fundamental_fft(final_audio + line_filename)
+			print frequency, line.dBFS, line.duration_seconds
+			try:
+				l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
+			except MultipleResultsFound:
+				pass
+			except NoResultFound:
 				try:
-					l = db_session.query(Line.filename).filter_by(filename=line_filename).one()
-				except MultipleResultsFound:
-					pass
+					f_obj = db_session.query(Fundamental).filter_by(frequency=int(frequency)).one()
 				except NoResultFound:
-					f_obj = Fundamental(
-						frequency=round(frequency,1), 
-						power=round(power, 1)
-						)
-					db_obj = DBFS(volume=round(line.dBFS,1))
-					d_obj = Duration(duration=round(line.duration_seconds,1))
+					f_obj = Fundamental(frequency=int(frequency))
+				try:
+					db_obj = db_session.query(DBFS).filter_by(dbfs=int(line.dBFS)).one()
+				except NoResultFound:
+					db_obj = DBFS(dbfs=int(line.dBFS))
+				try:
+					d_obj = db_session.query(Duration).filter_by(duration=int(line.duration_seconds)).one()
+				except NoResultFound:
+					d_obj = Duration(duration=int(line.duration_seconds))
+				try:
+					db_session.add_all([f_obj, db_obj, d_obj])
+					db_session.commit()
 					l_obj = Line(filename=line_filename, 
 						fundamental_id = f_obj.id,
 						dbfs_id = db_obj.id,
 						duration_id = d_obj.id
-						) 
-					db_session.add_all([f_obj, db_obj, d_obj, l_obj])
-					db_session.commit()
-					print 'success'
+					)
+					print l_obj.filename, l_obj.fundamental_id, l_obj.dbfs_id, l_obj.duration_id
+					try:
+						db_session.add(l_obj)
+						db_session.commit()
+						print 'success'
+					except Exception,e:
+						print str(e)
+						print 'failed to add line'
+						db_session.rollback()
+				except:
+					print 'failed to add audio objects'
+
 
 				
 print poem_dict
