@@ -11,8 +11,8 @@ from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.orm.exc import MultipleResultsFound, NoResultFound
 
 #file paths
-final_audio = './ubu/'
-temp = './temp/'
+final_audio = '/root/dada-dial/ubu/'
+temp = '/root/dada-dial/temp/'
 
 def fundamental_fft(filepath):
 	sampFreq, snd = wavfile.read(filepath)
@@ -43,10 +43,12 @@ def fundamental_fft(filepath):
 	fundamental = df[df.power==df.power.max()].index[0]
 	#hack to deal with telephony Hz range of 300-3400, ala missing fundamentals
 	if fundamental < 300.0: #telephony cut-off
-		multiplier = round(300.0/fundamental) #use harmonic above 300
-		if multiplier == 1: multiplier = 2
+		multiplier = math.ceil(300.0/fundamental) #use harmonic above 300
+		if multiplier <=1: multiplier = 2
 		fundamental = fundamental * multiplier
-	return fundamental
+		return fundamental
+	else:
+		return fundamental
 	# harmonic_frequencies = numpy.arange(fundamental, 3400, fundamental) #telephony will not pick < 300Hz
 	# harmonics = df[df.index.isin(harmonic_frequencies)]
 	# return harmonics.itertuples()
@@ -91,7 +93,7 @@ for link in links[1:2]:
 	soup = BeautifulSoup(r.text)
 	poemLinks = [a['href'] for a in soup.findAll('a',href=re.compile('http.*\.mp3'))]
 	opener = URLopener()
-	for poemLink in poemLinks[:6]: 
+	for poemLink in poemLinks[:2]: 
 		print poemLink
 		#download and save file to temp file
 		filename = urlparse(poemLink).path.split('/')[-1]
@@ -109,7 +111,6 @@ for link in links[1:2]:
 		for line in lines:
 			line_num += 1
 			line_filename = filename[:-4] + leadingZeros(line_num) + '.wav'
-			print line_filename
 			#save the lines...oh sweet golden, delicious lines
 			wave = line.export(final_audio + line_filename, format='wav')
 			#get the fundamental + harmonics info

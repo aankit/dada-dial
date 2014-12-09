@@ -23,3 +23,4 @@ for d in split_durations:
 	try:
 		duration_results = db_session.query(Line.id).join(Duration.lines).filter(Duration.duration==d).all()
 	except NoResultsFound:
+		
