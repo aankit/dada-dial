@@ -9,16 +9,21 @@ from sound_tools.dadaFFT import dadaFFT
 from dadasql.database import db_session
 from dadasql.model import Line, Fundamental, DBFS, Duration
 from sqlalchemy.orm.exc import NoResultFound
-import random
-
+import random, math
+from pydub import AudioSegment, silence
 path = '/root/dada-dial/sounds/'
 filename = 'user.wav'
 #create pydub audio file
-user_audio = Tools(path, filename)
+user_audio = AudioSegment.from_wav(path+filename)
 
-user_rests = user_audio.silenceLengths()
-user_splits = user_audio.cutbySilence()
-split_durations = [int(s.duration_seconds) for s in user_splits]
+#this is a hacky way to get rests that mimic the users
+user_rests = silence.detect_silence(user_audio)
+user_rests_len = [s[1]-s[0] for s in user_rests if (user_audio.duration_seconds*1000 - s[1])>3] 
+user_rest_segments = [AudioSegment.silent(duration=rest_len) for rest_len in user_rests_len]
+print [r.duration_seconds for r in user_rest_segments]
+
+user_splits = silence.split_on_silence(user_audio)
+split_durations = [math.ceil(s.duration_seconds) for s in user_splits]
 split_dbfs = [int(s.dBFS) for s in user_splits]
 split_fundamentals = []
 for s in user_splits:
@@ -51,24 +56,23 @@ for f in split_fundamentals:
 	except:
 		adjust = range(f-10, f+10)
 		fundamental_results.append([fq[0] for fq in db_session.query(Line.id).join(Fundamental.lines).filter(Fundamental.frequency.in_(adjust)).all()])
-
 poem = PoemBuilder('/root/dada-dial') 
 for i in range(0, len(user_splits)):
 	best = list(set(duration_results[i]) & set(dbfs_results[i]) & set(fundamental_results[i]))
 	second_best = list(set(duration_results[i]) & set(dbfs_results[i]))
 	if best:
 		line = random.choice(best)
-	else:
+	elif second_best:
 		line = random.choice(second_best)
+	else:
+		line = random.choice(duration_results[i])
 	line_filename = db_session.query(Line.filename).filter_by(id=line).one()
-	poem.addtoFile('/root/dada-dial/ubu/' + line_filename[0])
-
+	try:
+		insert_rest = user_rest_segments[i]
+	except:
+		insert_rest = AudioSegment.silent(duration=100)
+	audio_to_add = AudioSegment.from_wav('/root/dada-dial/ubu/' + line_filename[0]) + insert_rest
+	poem.poem += audio_to_add
 
 poem_filename = 'poem.wav'
 poem.exportFile(path, poem_filename)
-
-
-
-
-
-

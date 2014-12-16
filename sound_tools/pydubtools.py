@@ -37,13 +37,13 @@ class Tools(object):
 		self.filename = filename
 		self.audio = AudioSegment.from_wav(self.path + self.filename)
 
-	def cutbySilence(self, r=1):
+	def cutbySilence(self, min_silence_len=1000, r=1):
 		#using dBFS to normalize the silence across files
-		silence_thresh = self.audio.dBFS - 4/r
+		silence_thresh = self.audio.dBFS - 5/r
 		audio_splits = silence.split_on_silence(self.audio,
-		 	min_silence_len=1000, 
+		 	min_silence_len=min_silence_len, 
 		 	keep_silence=150, 
-		 	silence_thresh=silence_thresh)
+		 	silence_thresh=-16)
 		#cuts that are still too long, maybe an area of higher overall dBFS
 		long_splits = [split for split in audio_splits if math.floor(split.duration_seconds)>20]
 		if r != 2:
